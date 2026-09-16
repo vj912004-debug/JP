@@ -52,26 +52,26 @@ export function Preloader() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[200] flex flex-col items-center justify-center gap-6 bg-dark-950"
+          className="fixed inset-0 z-[200] flex flex-col items-center justify-center gap-6 bg-surface"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           aria-hidden
         >
           <motion.span
             initial={{ opacity: 0, y: 12, scale: 0.92 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="grid h-16 w-16 place-items-center rounded-xs bg-orange-600 font-display text-2xl font-extrabold text-white"
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-4xl font-semibold leading-none tracking-tight text-ink"
           >
-            JP
+            Jagdamba
           </motion.span>
-          <div className="h-px w-40 overflow-hidden bg-white/15">
+          <div className="h-px w-40 overflow-hidden bg-hairline-light">
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}
-              transition={{ duration: 1.15, ease: [0.16, 1, 0.3, 1] }}
-              className="h-full w-full bg-gradient-to-r from-orange-500 to-blue-500"
+              transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
+              className="h-full w-full bg-lime"
             />
           </div>
         </motion.div>

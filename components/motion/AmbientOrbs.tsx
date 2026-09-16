@@ -2,20 +2,20 @@ export function AmbientOrbs({ variant = "dark" }: { variant?: "dark" | "blue" | 
   const tones =
     variant === "blue"
       ? {
-          a: "bg-orange-500/20",
-          b: "bg-blue-400/15",
-          c: "bg-orange-400/10",
+          a: "bg-brand/25",
+          b: "bg-peacock/20",
+          c: "bg-brand/12",
         }
       : variant === "light"
         ? {
-            a: "bg-orange-400/20",
-            b: "bg-blue-500/12",
-            c: "bg-blue-300/16",
+            a: "bg-brand/20",
+            b: "bg-navy/12",
+            c: "bg-peacock/16",
           }
         : {
-            a: "bg-orange-600/25",
-            b: "bg-blue-600/20",
-            c: "bg-orange-400/12",
+            a: "bg-brand/25",
+            b: "bg-peacock/20",
+            c: "bg-brand/12",
           };
 
   return (

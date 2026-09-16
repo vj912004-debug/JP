@@ -43,15 +43,15 @@ function FlowNode({
       transition={{ duration: 0.45, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       className="relative flex items-start gap-4 lg:flex-col lg:items-center lg:gap-3 lg:text-center"
     >
-      <span className="relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border border-orange-500/40 bg-dark-950">
-        <span className="absolute inset-0 rounded-full bg-orange-500/20 animate-pulse-ring" />
-        <Icon size={18} strokeWidth={1.75} className="relative text-orange-400" />
+      <span className="relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand/20 bg-white">
+        <span className="absolute inset-0 rounded-full bg-lime/40 animate-pulse-ring" />
+        <Icon size={18} strokeWidth={1.75} className="relative text-brand" />
       </span>
       <div>
-        <span className="font-mono text-[10px] font-semibold tracking-[0.14em] text-orange-500">
+        <span className="font-mono text-[10px] font-semibold tracking-[0.14em] text-brand">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <p className="mt-1 max-w-[140px] text-[13px] font-medium leading-snug text-white/80 lg:mx-auto">
+        <p className="mt-1 max-w-[140px] text-[13px] font-medium leading-snug text-ink-secondary lg:mx-auto">
           {step.label}
         </p>
       </div>
@@ -70,15 +70,15 @@ function OneRoofFlow() {
 
   return (
     <div ref={ref} className="relative py-2">
-      <div className="absolute left-6 top-6 hidden h-px bg-white/10 lg:left-0 lg:right-0 lg:top-6 lg:block" />
+      <div className="absolute left-6 top-6 hidden h-px bg-hairline-light lg:left-0 lg:right-0 lg:top-6 lg:block" />
       <motion.div
         style={{ scaleX: lineX, transformOrigin: "left" }}
-        className="absolute left-0 right-0 top-6 hidden h-px bg-orange-500 lg:block"
+        className="absolute left-0 right-0 top-6 hidden h-px bg-brand lg:block"
       />
-      <div className="absolute left-[23px] top-2 bottom-2 w-px bg-white/10 lg:hidden" />
+      <div className="absolute left-[23px] top-2 bottom-2 w-px bg-hairline-light lg:hidden" />
       <motion.div
         style={{ scaleY: lineY, transformOrigin: "top" }}
-        className="absolute left-[23px] top-2 bottom-2 w-px bg-orange-500 lg:hidden"
+        className="absolute left-[23px] top-2 bottom-2 w-px bg-brand lg:hidden"
       />
       <div className="relative grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-9 lg:gap-x-2 lg:gap-y-0">
         {oneRoofFlow.map((step, i) => (
@@ -91,15 +91,13 @@ function OneRoofFlow() {
 
 export function ApplicationsSection() {
   return (
-    <section className="relative overflow-hidden bg-dark-950 py-20 sm:py-28">
-      <div className="pointer-events-none absolute inset-0 bg-technical-grid-animated opacity-50" />
-      <AmbientOrbs />
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      <AmbientOrbs variant="light" />
       <Container className="relative">
         <SectionHeading
           index="08"
           kicker="Applications & Projects"
           title="From steel plate to finished profile — everything under one roof"
-          light
         />
 
         <div className="mt-14">

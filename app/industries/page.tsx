@@ -36,13 +36,12 @@ export default function IndustriesPage() {
               const Icon = (Icons as unknown as Record<string, Icons.LucideIcon>)[ind.icon] ?? Icons.Factory;
               return (
                 <Reveal key={ind.name} delay={(i % 4) * 0.05}>
-                  <div id={ind.slug} className="group relative aspect-[4/5] scroll-mt-28 overflow-hidden rounded-card bg-blue-950 transition-transform duration-300 ease-engineered hover:-translate-y-2 hover:shadow-card-hover">
-                    <div className="absolute inset-0 bg-technical-grid opacity-40" />
+                  <div id={ind.slug} className="group relative aspect-[4/5] scroll-mt-28 overflow-hidden rounded-card border border-hairline-light bg-white transition-transform duration-300 ease-engineered hover:-translate-y-2 hover:shadow-card-hover">
                     <div className="relative flex h-full flex-col justify-between p-4">
-                      <Icon size={22} strokeWidth={1.6} className="text-orange-400" />
+                      <Icon size={22} strokeWidth={1.6} className="text-brand" />
                       <div>
-                        <h3 className="text-[13.5px] font-semibold leading-snug text-white">{ind.name}</h3>
-                        <p className="mt-1.5 text-[11.5px] leading-snug text-white/50">{ind.note}</p>
+                        <h3 className="text-[13.5px] font-semibold leading-snug text-ink">{ind.name}</h3>
+                        <p className="mt-1.5 text-[11.5px] leading-snug text-ink-muted">{ind.note}</p>
                       </div>
                     </div>
                   </div>

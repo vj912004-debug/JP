@@ -90,15 +90,15 @@ export default function AboutPage() {
 
       <section className="py-20 sm:py-24">
         <Container>
-          <div className="grid grid-cols-1 gap-8 rounded-block bg-dark-950 p-8 sm:grid-cols-3 sm:p-12">
+          <div className="grid grid-cols-1 gap-8 rounded-block border border-hairline-light bg-white p-8 sm:grid-cols-3 sm:p-12">
             {[
               { label: "ISO 9001:2015", value: company.registrations.iso.split("—")[1]?.trim() ?? company.registrations.iso },
               { label: "MSME / Udyam", value: company.registrations.udyam },
               { label: "GST Registered", value: `GSTIN ${company.registrations.gst}` },
             ].map((reg) => (
               <Reveal key={reg.label}>
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-orange-400">{reg.label}</p>
-                <p className="mt-2 font-display text-lg font-bold text-white">{reg.value}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-brand">{reg.label}</p>
+                <p className="mt-2 font-display text-lg font-semibold text-ink">{reg.value}</p>
               </Reveal>
             ))}
           </div>

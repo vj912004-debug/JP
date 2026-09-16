@@ -31,9 +31,9 @@ export function Marquee({
         {loop.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="mx-6 flex shrink-0 items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/50"
+            className="mx-6 flex shrink-0 items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-ink-subtle"
           >
-            <span className="h-1 w-1 rounded-full bg-orange-500" />
+            <span className="text-brand">◆</span>
             {item}
           </span>
         ))}

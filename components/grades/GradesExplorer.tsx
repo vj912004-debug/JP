@@ -57,7 +57,7 @@ export function GradesExplorer() {
       <div className="mt-6 overflow-x-auto rounded-card border border-hairline-light">
         <table className="w-full min-w-[860px] border-collapse text-left text-sm">
           <thead>
-            <tr className="bg-blue-950">
+            <tr className="bg-brand">
               {["Grade", "Standard", "Yield Strength", "Tensile Strength", "Elongation", "Impact / Condition"].map(
                 (col) => (
                   <th key={col} className="px-4 py-3.5 font-display text-xs font-bold uppercase tracking-[0.05em] text-white">

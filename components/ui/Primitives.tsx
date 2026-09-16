@@ -83,7 +83,7 @@ export function DataTable({
     <div className="overflow-x-auto rounded-card border border-hairline-light">
       <table className="w-full min-w-[640px] border-collapse text-left text-sm">
         <thead>
-          <tr className="bg-blue-950">
+          <tr className="bg-brand">
             {columns.map((col) => (
               <th
                 key={col}

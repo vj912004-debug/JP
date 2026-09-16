@@ -1,6 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { AmbientOrbs } from "@/components/motion/AmbientOrbs";
+import { FlipText } from "@/components/ui/flip-text";
 
 export function PageHero({
   eyebrow,
@@ -14,26 +14,24 @@ export function PageHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-blue-950 pb-16 pt-[calc(var(--nav-height)+64px)] sm:pt-[calc(var(--nav-height)+88px)]">
-      <div className="pointer-events-none absolute inset-0 bg-technical-grid opacity-40" />
-      <AmbientOrbs />
-      <div className="pointer-events-none absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
-
+    <section className="relative isolate overflow-hidden pb-14 pt-10 sm:pt-14">
       <Container className="relative z-10">
         <Reveal>
-          <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-orange-400">
-            <span className="h-px w-8 origin-left animate-line-grow bg-orange-400/60" />
+          <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+            <span className="h-px w-8 origin-left animate-line-grow bg-brand/50" />
             {eyebrow}
           </div>
         </Reveal>
         <Reveal delay={0.06}>
-          <h1 className="mt-4 max-w-3xl text-balance font-display text-h2-mobile font-extrabold tracking-tight text-white sm:text-h2">
-            {title}
+          <h1 className="mt-4 max-w-3xl text-balance font-display text-h2-mobile font-semibold tracking-tight text-ink sm:text-h2">
+            <FlipText className="block" duration={2.4}>
+              {title}
+            </FlipText>
           </h1>
         </Reveal>
         {subtitle && (
           <Reveal delay={0.12}>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/65">{subtitle}</p>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-muted">{subtitle}</p>
           </Reveal>
         )}
         {children && <Reveal delay={0.18}>{children}</Reveal>}

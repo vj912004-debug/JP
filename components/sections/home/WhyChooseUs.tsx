@@ -36,7 +36,7 @@ export function WhyChooseUs() {
               variants={staggerItem}
               className="rounded-card border border-hairline-light bg-white px-5 py-5"
             >
-              <p className="font-display text-stat-mobile font-extrabold tabular-nums text-blue-950 sm:text-4xl">
+              <p className="font-display text-stat-mobile font-semibold tabular-nums text-ink sm:text-4xl">
                 <AnimatedCounter value={item.value} suffix={item.suffix} />
               </p>
               <p className="mt-1.5 text-sm font-medium text-ink-muted">{item.label}</p>
@@ -57,8 +57,8 @@ export function WhyChooseUs() {
                 className={cn(
                   "group relative overflow-hidden rounded-card border p-6 transition-shadow duration-300 ease-engineered shine-hover hover:z-10",
                   big
-                    ? "bg-blue-950 border-blue-900 sm:col-span-2 hover:shadow-blue-glow"
-                    : "bg-white border-hairline-light hover:border-blue-800/40 hover:shadow-card-hover"
+                    ? "bg-[#1e3d28] border-[#1e3d28] sm:col-span-2 hover:shadow-blue-glow"
+                    : "bg-white border-hairline-light hover:border-brand/30 hover:shadow-card-hover"
                 )}
               >
                 {big && (
@@ -74,10 +74,10 @@ export function WhyChooseUs() {
                   <span
                     className={cn(
                       "grid h-11 w-11 place-items-center rounded-xs transition-transform duration-300 group-hover:scale-110",
-                      big ? "bg-orange-600" : "bg-blue-50"
+                      big ? "bg-lime text-ink" : "bg-blue-50"
                     )}
                   >
-                    <Icon size={20} strokeWidth={1.75} className={big ? "text-white" : "text-blue-900"} />
+                    <Icon size={20} strokeWidth={1.75} className={big ? "text-ink" : "text-brand"} />
                   </span>
                   <h3
                     className={cn(

@@ -23,25 +23,25 @@ export function IndustriesSection() {
                 variants={staggerItem}
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative aspect-[4/5] overflow-hidden rounded-card bg-blue-950 shadow-none hover:shadow-card-hover"
+                className="group relative aspect-[4/5] overflow-hidden rounded-card border border-hairline-light bg-white shadow-none hover:shadow-card-hover"
               >
                 <Link href={`/industries#${ind.slug}`} className="absolute inset-0 z-10">
                   <span className="sr-only">{ind.name}</span>
                 </Link>
-                <div className="absolute inset-0 bg-technical-grid opacity-40" />
+                <div className="absolute inset-0 bg-surface-muted" />
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-dark-950 transition-transform duration-500 ease-engineered group-hover:scale-105"
+                  className="absolute inset-0 bg-gradient-to-br from-brand/10 to-transparent transition-transform duration-500 ease-engineered group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-600/35 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="relative flex h-full flex-col justify-between p-4">
                   <Icon
                     size={22}
                     strokeWidth={1.6}
-                    className="text-orange-400 transition-transform duration-300 group-hover:scale-110"
+                    className="text-brand transition-transform duration-300 group-hover:scale-110"
                   />
                   <div>
-                    <span className="block h-0.5 w-6 origin-left scale-x-0 bg-orange-500 transition-transform duration-300 group-hover:scale-x-100" />
-                    <h3 className="mt-2.5 text-[13.5px] font-semibold leading-snug text-white">
+                    <span className="block h-0.5 w-6 origin-left scale-x-0 bg-lime transition-transform duration-300 group-hover:scale-x-100" />
+                    <h3 className="mt-2.5 text-[13.5px] font-semibold leading-snug text-ink">
                       {ind.name}
                     </h3>
                   </div>

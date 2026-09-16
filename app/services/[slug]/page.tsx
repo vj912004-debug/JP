@@ -91,16 +91,16 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                 </div>
               </div>
 
-              <div className="mt-6 rounded-card bg-dark-950 p-6 sm:p-7">
-                <h3 className="font-display text-lg font-bold text-white">
+              <div className="mt-6 rounded-card border border-hairline-light bg-white p-6 sm:p-7">
+                <h3 className="font-display text-lg font-semibold text-ink">
                   Other services
                 </h3>
-                <ul className="mt-4 flex flex-col divide-y divide-white/10">
+                <ul className="mt-4 flex flex-col divide-y divide-hairline-light">
                   {otherServices.map((s) => (
                     <li key={s.slug}>
                       <Link
                         href={`/services/${s.slug}`}
-                        className="flex items-center justify-between py-3 text-sm font-medium text-white/70 hover:text-orange-400"
+                        className="flex items-center justify-between py-3 text-sm font-medium text-ink-muted hover:text-brand"
                       >
                         {s.name}
                         <ArrowUpRight size={14} />

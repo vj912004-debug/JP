@@ -32,17 +32,12 @@ export function SectionHeading({
             className={cn(
               "mb-4 flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-[0.14em]",
               align === "center" && "justify-center",
-              light ? "text-orange-400" : "text-orange-600"
+              light ? "text-lime" : "text-brand"
             )}
           >
             {index && <span className="tabular-nums">{index}</span>}
             {index && kicker && (
-              <span
-                className={cn(
-                  "h-px w-8",
-                  light ? "bg-orange-400/60" : "bg-orange-600/60"
-                )}
-              />
+              <span className={cn("h-px w-8", light ? "bg-lime/70" : "bg-brand/50")} />
             )}
             {kicker && <span>{kicker}</span>}
           </div>
@@ -51,7 +46,7 @@ export function SectionHeading({
       <Reveal delay={0.06}>
         <h2
           className={cn(
-            "font-display text-h2-mobile font-extrabold tracking-tight sm:text-h2 text-balance",
+            "text-balance font-display text-h2-mobile font-semibold tracking-tight sm:text-h2",
             light ? "text-white" : "text-ink-primary"
           )}
         >
@@ -63,7 +58,7 @@ export function SectionHeading({
           <p
             className={cn(
               "mt-4 text-lg leading-relaxed",
-              light ? "text-white/70" : "text-ink-secondary"
+              light ? "text-white/75" : "text-ink-secondary"
             )}
           >
             {subtitle}

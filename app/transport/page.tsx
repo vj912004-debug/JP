@@ -71,20 +71,20 @@ export default function TransportPage() {
 
       <section className="py-20 sm:py-24">
         <Container>
-          <div className="grid grid-cols-1 gap-10 rounded-block bg-dark-950 p-8 sm:grid-cols-2 sm:p-10">
+          <div className="grid grid-cols-1 gap-10 rounded-block border border-hairline-light bg-white p-8 sm:grid-cols-2 sm:p-10">
             <div>
-              <h3 className="font-display text-lg font-bold text-white">Transport Contacts</h3>
+              <h3 className="font-display text-lg font-semibold text-ink">Transport Contacts</h3>
               <div className="mt-4">
-                <SpecList items={transportContacts} light />
+                <SpecList items={transportContacts} />
               </div>
             </div>
             <div className="flex flex-col justify-center gap-3">
-              <p className="text-sm leading-relaxed text-white/60">
+              <p className="text-sm leading-relaxed text-ink-muted">
                 For vehicle arrangement, loading schedules or urgent dispatch support, reach
                 out directly — our accounts and inquiry lines are staffed separately for
                 faster response.
               </p>
-              <Button href="/contact" variant="outline-light" className="w-fit">
+              <Button href="/contact" variant="outline" className="w-fit">
                 Contact Transport Team
               </Button>
             </div>

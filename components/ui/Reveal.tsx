@@ -37,7 +37,7 @@ export function Reveal({
       opacity: 1,
       x: 0,
       y: 0,
-      transition: { duration, delay, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration, delay, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -95,7 +95,7 @@ export const staggerItem: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -124,7 +124,7 @@ export function ImageReveal({
         initial={{ clipPath: clip, scale: 1.06 }}
         whileInView={{ clipPath: "inset(0 0 0 0)", scale: 1 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="h-full w-full"
       >
         {children}
@@ -150,7 +150,7 @@ export function ScaleReveal({
       initial={{ opacity: 0, scale: 0.96 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}

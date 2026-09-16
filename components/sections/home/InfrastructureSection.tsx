@@ -22,9 +22,9 @@ export function InfrastructureSection() {
   const ySide = useTransform(scrollYProgress, [0, 1], [-24, 24]);
 
   return (
-    <section className="relative overflow-hidden bg-dark-950 py-20 sm:py-28">
-      <div className="pointer-events-none absolute inset-0 bg-technical-grid-animated opacity-50" />
-      <AmbientOrbs />
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-grad-mesh opacity-40" />
+      <AmbientOrbs variant="light" />
       <Container className="relative">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
@@ -33,16 +33,15 @@ export function InfrastructureSection() {
               kicker="Infrastructure & Capacity"
               title="Built for scale, engineered for precision"
               subtitle="A 75,000 sq. ft. facility built to support both bulk steel requirements and customized profile-cut components, with quick turnaround and dependable service."
-              light
             />
             <Reveal delay={0.15}>
               <div className="mt-9">
-                <SpecList items={capacitySpecs.slice(0, 6)} light />
+                <SpecList items={capacitySpecs.slice(0, 6)} />
               </div>
             </Reveal>
             <Reveal delay={0.22}>
               <div className="mt-9">
-                <Button href="/infrastructure" variant="outline-light" showArrow>
+                <Button href="/infrastructure" variant="outline" showArrow>
                   Explore Infrastructure
                 </Button>
               </div>

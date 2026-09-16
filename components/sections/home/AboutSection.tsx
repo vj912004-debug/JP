@@ -1,91 +1,107 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Leaf, Landmark, Flame, Users } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal, RevealStagger, ImageReveal, staggerItem } from "@/components/ui/Reveal";
+import { Reveal, RevealStagger, staggerItem } from "@/components/ui/Reveal";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { Button } from "@/components/ui/Button";
+import { FlipText } from "@/components/ui/flip-text";
 import { company } from "@/data/company";
+import { steelMakes } from "@/data/products";
+import { motion } from "framer-motion";
 
-const coreServices = [
-  "Steel Plate Supply",
-  "CNC Profile Cutting",
-  "Laser Cutting",
-  "CNC Drilling",
-  "Ultrasonic Testing",
-  "Thickness Verification",
-  "Material Inspection & Traceability",
-  "Loading, Transportation & Delivery",
+const missionCards = [
+  {
+    title: "Sustainable Stock",
+    body: "Holding mill-tested plate so projects start without waiting on mills.",
+    category: "steel-stock",
+    icon: Landmark,
+  },
+  {
+    title: "Precise Processing",
+    body: "CNC profile cutting and laser cutting from drawing or DXF.",
+    category: "cnc-profile-cutting",
+    icon: Flame,
+  },
+  {
+    title: "Trusted Delivery",
+    body: "Inspection, UT, loading and transport handled under one roof.",
+    category: "dispatch",
+    icon: Users,
+  },
 ];
 
 export function AboutSection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-16 sm:py-24">
       <Container>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <SectionHeading
-              index="02"
-              kicker="About Jagdamba Procut"
-              title="Your Complete Steel Solution Partner"
-              subtitle={company.description}
-            />
-
-            <RevealStagger as="ul" className="mt-8 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2" stagger={0.06}>
-              {coreServices.map((item) => (
-                <motion.li
-                  key={item}
-                  variants={staggerItem}
-                  className="flex list-none items-center gap-2.5 text-sm font-medium text-ink-secondary"
-                >
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-                  {item}
-                </motion.li>
-              ))}
-            </RevealStagger>
-
-            <Reveal delay={0.22}>
-              <div className="mt-9 flex flex-wrap items-center gap-2.5">
-                {company.philosophy.map((step, i) => (
-                  <span key={step} className="flex items-center gap-2.5">
-                    <span className="rounded-full border border-hairline-blue bg-blue-50 px-3.5 py-1.5 text-xs font-semibold text-blue-900">
-                      {step}
-                    </span>
-                    {i < company.philosophy.length - 1 && (
-                      <span className="text-hairline-medium">+</span>
-                    )}
-                  </span>
-                ))}
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.28}>
-              <div className="mt-9">
-                <Button href="/about" variant="outline" showArrow>
-                  More About Us
-                </Button>
-              </div>
-            </Reveal>
-          </div>
-
-          <ImageReveal className="relative overflow-hidden rounded-block">
-            <div className="aspect-[4/5]">
-              <ImagePlaceholder
-                category="factory"
-                label="Covered processing shed — plate stock and CNC bay"
-                className="h-full w-full"
+        <div className="rounded-[28px] bg-white px-5 py-10 sm:px-8 sm:py-14 lg:px-12">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+            <div>
+              <SectionHeading
+                kicker="Our Mission"
+                title={
+                  <FlipText duration={2.6} delay={0.1}>
+                    We're Building Stronger, Cleaner, Faster Cuts.
+                  </FlipText>
+                }
+                subtitle={company.description}
               />
+              <Reveal delay={0.16}>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Button href="/products" showArrow>
+                    Explore Products
+                  </Button>
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-brand"
+                  >
+                    Learn More
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
+              </Reveal>
             </div>
-            <div className="absolute bottom-4 left-4 w-44 rounded-card border border-white/15 bg-white/95 p-4 shadow-card-hover backdrop-blur-sm sm:w-52 sm:p-5">
-              <p className="font-display text-2xl font-extrabold text-blue-900">
-                {company.sinceLabel.match(/\d{4}/)?.[0]}
-              </p>
-              <p className="mt-1 text-xs font-medium text-ink-muted">
-                Serving the engineering industry
-              </p>
-            </div>
-          </ImageReveal>
+
+            <RevealStagger className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {missionCards.map((card) => {
+                const Icon = card.icon;
+                return (
+                  <motion.article
+                    key={card.title}
+                    variants={staggerItem}
+                    className="group overflow-hidden rounded-[22px] bg-surface"
+                  >
+                    <div className="relative aspect-[3/4] overflow-hidden">
+                      <ImagePlaceholder category={card.category} label={card.title} className="h-full w-full" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+                      <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                        <span className="grid h-8 w-8 place-items-center rounded-full bg-white/15 backdrop-blur">
+                          <Icon size={15} />
+                        </span>
+                        <h3 className="mt-3 font-display text-lg font-semibold leading-snug">{card.title}</h3>
+                        <p className="mt-1 text-[12px] leading-relaxed text-white/80">{card.body}</p>
+                      </div>
+                    </div>
+                  </motion.article>
+                );
+              })}
+            </RevealStagger>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col items-center gap-5 sm:flex-row sm:justify-center">
+          <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-subtle">
+            <Leaf size={12} className="text-brand" />
+            Trusted by mill sources
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm font-semibold text-ink-subtle">
+            {steelMakes.slice(0, 5).map((make) => (
+              <span key={make.name}>{make.name.replace(" Steel", "")}</span>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

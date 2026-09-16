@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Loader2, RotateCcw, MessageCircle, Mail } from "lucide-react";
 import { TextField, TextAreaField, SelectField, RadioField } from "./FormFields";
@@ -70,6 +70,11 @@ export function EnquiryForm({ variant = "quote" }: { variant?: Variant }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
   const [whatsapp, setWhatsapp] = useState("");
   const [emailLink, setEmailLink] = useState("");
+
+  useEffect(() => {
+    const email = new URLSearchParams(window.location.search).get("email");
+    if (email) setForm((prev) => ({ ...prev, email }));
+  }, []);
 
   const set = (key: keyof FormState) => (value: string) => {
     setForm((prev) => ({ ...prev, [key]: value }));

@@ -25,7 +25,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, y: 12, scale: 0.9 }}
           transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-[5.75rem] right-5 z-40 grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-dark-900 text-white shadow-card-hover transition-colors hover:border-orange-500/60 hover:bg-orange-600 sm:bottom-[6.25rem] sm:right-7"
+          className="fixed bottom-[5.75rem] right-5 z-40 grid h-11 w-11 place-items-center rounded-full border border-hairline-light bg-white text-ink shadow-card-hover transition-colors hover:border-brand/40 hover:bg-lime sm:bottom-[6.25rem] sm:right-7"
         >
           <ArrowUp size={18} strokeWidth={2.25} />
         </motion.button>

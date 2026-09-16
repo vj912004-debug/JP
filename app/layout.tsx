@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Inter } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
@@ -10,17 +10,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
-const manrope = Manrope({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-body",
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const inter = Inter({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading",
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -66,21 +66,27 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
 };
 
+export const viewport = {
+  themeColor: "#f6f7f2",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
-      <body className="bg-surface-primary font-sans text-ink-primary antialiased">
+    <html lang="en" className={`${jakarta.variable} ${fraunces.variable} h-full antialiased`}>
+      <body className="site-shell min-h-full bg-surface font-sans text-ink antialiased">
         <JsonLd />
         <a href="#main" className="skip-link">
           Skip to content
         </a>
         <Preloader />
         <ScrollProgress />
-        <Navbar />
-        <main id="main" className="relative">
-          {children}
-        </main>
-        <Footer />
+        <div className="flex min-h-full flex-col">
+          <Navbar />
+          <main id="main" className="relative flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
         <ScrollToTop />
         <WhatsAppButton />
       </body>

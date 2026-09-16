@@ -14,40 +14,42 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "linear-gradient(135deg, #07111F 0%, #0D47A1 70%, #17365D 100%)",
+          background: "#f6f7f2",
           padding: "64px 72px",
-          color: "white",
-          fontFamily: "sans-serif",
+          color: "#14261a",
+          fontFamily: "serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div
             style={{
-              width: 64,
-              height: 64,
+              width: 56,
+              height: 56,
+              borderRadius: 999,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "#F97316",
-              fontSize: 28,
-              fontWeight: 800,
+              background: "#2f7a3e",
+              color: "#c8e86a",
+              fontSize: 22,
+              fontWeight: 700,
             }}
           >
             JP
           </div>
-          <div style={{ fontSize: 22, letterSpacing: 4, textTransform: "uppercase", opacity: 0.8 }}>
+          <div style={{ fontSize: 20, letterSpacing: 3, textTransform: "uppercase", color: "#5c6b62" }}>
             Vadodara, Gujarat
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 64, fontWeight: 800, letterSpacing: -1.5, lineHeight: 1.05 }}>
-            JAGDAMBA PROCUT
+          <div style={{ fontSize: 64, fontWeight: 600, letterSpacing: -1.5, lineHeight: 1.05 }}>
+            Precision in Steel,
           </div>
-          <div style={{ marginTop: 12, fontSize: 28, fontWeight: 600, color: "#FDBA74" }}>
-            Precision in Steel. Strength in Every Cut.
+          <div style={{ fontSize: 64, fontWeight: 600, letterSpacing: -1.5, lineHeight: 1.05 }}>
+            Strength in Every Cut.
           </div>
         </div>
-        <div style={{ fontSize: 20, opacity: 0.7 }}>
+        <div style={{ fontSize: 20, color: "#5c6b62" }}>
           Steel Plates · CNC Profile Cutting · Laser Cutting · CNC Drilling · UT
         </div>
       </div>
